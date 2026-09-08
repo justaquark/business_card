@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manuel Barrón — Práctica de Datos | Nfq</title>
+<meta name="description" content="Manuel Barrón, líder de la práctica de Datos en Nfq. Gobierno de datos, arquitectura y analítica para el sector financiero en España y México.">
+
+<!-- Vista previa al compartir el enlace (WhatsApp, LinkedIn, correo) -->
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Manuel Barrón — Práctica de Datos | Nfq">
+<meta property="og:description" content="Gobierno de datos, arquitectura y analítica para el sector financiero en España y México.">
+<meta property="og:image" content="foto.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ─────────────────────────────────────────────────────────
+   Paleta y tipografías del Manual de Marca Nfq
+   Primarios:  Siena Orange · Raspberry Red · Crayola Blue
+   Neutrales:  Black · Grey 700 a Grey 100
+   Tipografía: Sora (títulos) · Instrument Sans (texto)
+   ───────────────────────────────────────────────────────── */
+:root{
+  --siena:      #EC683E;
+  --raspberry:  #D13B5F;
+  --azul:       #217BEE;   /* color primario elegido como acento */
+
+  --negro:      #100D25;
+  --grey-700:   #5D6066;
+  --grey-500:   #82858D;
+  --grey-300:   #BFBFBF;
+  --grey-200:   #E1E1E1;
+  --grey-100:   #F3F3F3;
+  --blanco:     #FFFFFF;
+
+  --titulos: "Sora", "Helvetica Neue", Arial, sans-serif;
+  --texto:   "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  font-family:var(--texto);
+  color:var(--negro);
+  background:var(--blanco);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ── Cabecera ───────────────────────────────────────────── */
+.barra{border-bottom:1px solid var(--grey-200);background:var(--blanco)}
+.barra-int{
+  max-width:1060px;margin:0 auto;padding:20px 24px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+}
+.marca{display:inline-flex;align-items:center;line-height:0}
+.marca img{height:40px;width:auto;display:block}
+.lugar{font-size:.85rem;color:var(--grey-500);margin:0}
+
+.pagina{max-width:1060px;margin:0 auto;padding:64px 24px 72px}
+
+/* ── Bloque principal ───────────────────────────────────── */
+.perfil{display:grid;grid-template-columns:320px 1fr;gap:64px;align-items:start}
+
+.retrato{position:relative;isolation:isolate;margin:0}
+.retrato::before{
+  content:"";position:absolute;inset:0;
+  background:var(--azul);transform:translate(16px,16px);z-index:0;
+}
+.retrato img,.retrato .inicial{
+  position:relative;z-index:1;display:block;width:100%;
+  aspect-ratio:4/5;object-fit:cover;object-position:center top;
+  background:var(--grey-100);
+}
+.retrato .inicial{
+  display:none;align-items:center;justify-content:center;
+  font-family:var(--titulos);font-size:5rem;font-weight:700;
+  color:var(--grey-300);letter-spacing:-.04em;
+}
+
+h1{
+  font-family:var(--titulos);
+  font-size:clamp(2.3rem,5.2vw,3.5rem);line-height:1.05;
+  letter-spacing:-.035em;font-weight:700;margin:0 0 16px;
+}
+.cargo{font-family:var(--titulos);font-size:1.1rem;font-weight:600;margin:0;line-height:1.35}
+.empresa{font-size:1rem;color:var(--grey-500);margin:4px 0 28px}
+.bio{max-width:58ch;margin:0 0 20px;color:var(--grey-700)}
+
+.focos{list-style:none;display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:8px 0 40px}
+.focos li{
+  font-size:.83rem;color:var(--grey-700);
+  border:1px solid var(--grey-200);border-radius:2px;padding:5px 12px;
+}
+
+/* ── Accesos ────────────────────────────────────────────── */
+.accesos{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.acceso{
+  display:flex;align-items:center;gap:15px;
+  padding:17px 19px;border:1px solid var(--grey-200);border-radius:3px;
+  text-decoration:none;color:var(--negro);background:var(--blanco);
+  transition:background .16s ease,color .16s ease,border-color .16s ease;
+}
+.acceso .txt{display:flex;flex-direction:column;min-width:0}
+.acceso b{font-family:var(--titulos);font-size:.95rem;font-weight:600;letter-spacing:-.01em;line-height:1.3}
+.acceso small{font-size:.8rem;color:var(--grey-500);line-height:1.4;margin-top:2px}
+.acceso svg{flex:0 0 auto;width:22px;height:22px}
+.acceso:hover,.acceso:focus-visible{
+  background:var(--negro);color:var(--blanco);border-color:var(--negro);
+}
+.acceso:hover small,.acceso:focus-visible small{color:rgba(255,255,255,.7)}
+.acceso--destacado{border-color:var(--azul)}
+.acceso--destacado:hover,.acceso--destacado:focus-visible{
+  background:var(--azul);border-color:var(--azul);
+}
+:focus-visible{outline:2px solid var(--azul);outline-offset:3px}
+
+/* ── Pie ────────────────────────────────────────────────── */
+.pie{
+  max-width:1060px;margin:0 auto;padding:22px 24px 40px;
+  border-top:1px solid var(--grey-200);
+  font-size:.82rem;color:var(--grey-500);
+  display:flex;flex-wrap:wrap;gap:6px 24px;justify-content:space-between;
+}
+.pie p{margin:0}
+.pie a{color:var(--grey-500)}
+
+/* ── Entrada (una sola animación, al cargar) ────────────── */
+@keyframes entra{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.retrato,.identidad{animation:entra .5s ease-out both}
+.identidad{animation-delay:.08s}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width:880px){
+  .perfil{grid-template-columns:1fr;gap:48px}
+  .retrato{max-width:280px}
+  .retrato::before{transform:translate(12px,12px)}
+  .pagina{padding:48px 24px 56px}
+}
+@media (max-width:600px){
+  .barra-int{padding:16px 20px}
+  .marca img{height:32px}
+  .pagina{padding:40px 20px 48px}
+  .pie{padding:20px 20px 36px}
+  .accesos{grid-template-columns:1fr}
+  .retrato{max-width:100%}
+}
+</style>
+</head>
+
+<body>
+
+<header class="barra">
+  <div class="barra-int">
+    <a class="marca" href="https://nfq.es/" target="_blank" rel="noopener">
+      <img src="nfq-logo-negro.png" alt="Nfq — Beyond Consulting">
+    </a>
+    <p class="lugar">Ciudad de México</p>
+  </div>
+</header>
+
+<div class="pagina">
+  <main class="perfil">
+
+    <figure class="retrato">
+      <img src="foto.png" alt="Manuel Barrón"
+           onerror="this.style.display='none';document.getElementById('inicial').style.display='flex'">
+      <div class="inicial" id="inicial" aria-hidden="true">MB</div>
+    </figure>
+
+    <div class="identidad">
+      <h1>Manuel Barrón</h1>
+      <p class="cargo">Líder de la Práctica de Datos</p>
+      <p class="empresa">Nfq — Beyond Consulting</p>
+
+      <p class="bio">
+        Acompaño a bancos, bolsas y aseguradoras a convertir sus datos en decisiones:
+        gobierno de datos bajo el marco DAMA, arquitecturas cloud, migraciones y
+        modelos analíticos que resisten la mirada del regulador.
+      </p>
+      <p class="bio">
+        Trabajo entre México y España, con equipos que entienden tanto el negocio
+        financiero como la ingeniería que lo sostiene.
+      </p>
+
+      <ul class="focos">
+        <li>Estrategia y Gobierno de datos</li>
+        <li>Ingeniería de datos</li>
+        <li>Arquitectura y cloud</li>
+        <li>Migraciones</li>
+        <li>Analítica e IA</li>
+      </ul>
+
+      <nav class="accesos">
+
+        <a class="acceso" href="https://nfq.es/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19"/><path d="M12 2.5a15 15 0 0 1 0 19 15 15 0 0 1 0-19"/>
+          </svg>
+          <span class="txt"><b>Nfq</b><small>Conoce a la firma</small></span>
+        </a>
+
+        <a class="acceso acceso--destacado" href="presentacion-consultoria.pdf" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 14h6"/><path d="M9 17h4"/>
+          </svg>
+          <span class="txt"><b>Presentación de Capacidades</b><small>Servicios y casos de uso (PDF)</small></span>
+        </a>
+
+        <a class="acceso" href="https://wa.me/525579745599?text=Hola%20Manuel%2C%20vi%20tu%20p%C3%A1gina%20y%20me%20gustar%C3%ADa%20platicar%20contigo." target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.28-1.38a9.9 9.9 0 0 0 4.76 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m0 1.82c2.16 0 4.19.84 5.72 2.37a8.06 8.06 0 0 1 2.37 5.72c0 4.46-3.63 8.09-8.1 8.09a8.2 8.2 0 0 1-4.12-1.13l-.29-.17-3.06.8.82-2.99-.19-.31a8.05 8.05 0 0 1-1.24-4.29c0-4.46 3.63-8.09 8.09-8.09m-4.6 4.28c-.21 0-.55.08-.84.39-.29.31-1.1 1.08-1.1 2.63s1.13 3.05 1.29 3.26c.16.21 2.22 3.39 5.38 4.62 2.63 1.03 3.17.83 3.74.78.57-.05 1.83-.75 2.09-1.47.26-.72.26-1.34.18-1.47-.08-.13-.29-.21-.6-.36-.31-.16-1.83-.9-2.11-1-.29-.11-.5-.16-.71.15-.21.31-.81 1-.99 1.21-.18.21-.37.23-.68.08-.31-.16-1.31-.48-2.5-1.54-.92-.82-1.55-1.84-1.73-2.15-.18-.31-.02-.48.14-.63.14-.14.31-.37.47-.55.15-.19.2-.32.31-.53.1-.21.05-.4-.03-.55-.08-.16-.69-1.69-.95-2.31-.25-.6-.5-.52-.69-.53z"/>
+          </svg>
+          <span class="txt"><b>WhatsApp</b><small>Escríbeme un mensaje directo</small></span>
+        </a>
+
+        <a class="acceso" href="https://www.linkedin.com/in/jbarron8005/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12M7.12 20.45H3.55V9h3.57zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0"/>
+          </svg>
+          <span class="txt"><b>LinkedIn</b><small>Trayectoria y publicaciones</small></span>
+        </a>
+
+      </nav>
+    </div>
+  </main>
+</div>
+
+<footer class="pie">
+  <p>Nfq Advisory Services, 2026</p>
+  <p><a href="https://nfq.es/politica-de-privacidad-y-aviso-legal/" target="_blank" rel="noopener">Aviso legal y privacidad</a></p>
+</footer>
+
+</body>
+</html>
